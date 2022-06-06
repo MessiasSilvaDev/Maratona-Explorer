@@ -19,7 +19,7 @@ body {
 }
 
 .wrapper {
-    width: 37rem;
+    width: 32rem;
     display: flex;
     flex-direction: column;
 }
@@ -34,7 +34,7 @@ body {
 
 .wrapper h1 {
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     font-weight: 700;
 }
 
@@ -51,13 +51,18 @@ body {
     outline: 0.1rem solid #fff;
     border-radius: 0.2rem;
     margin-bottom: 1.5rem;
+    width: 90%;
+    margin-inline: auto;
 }
 
 .wrapper button {
     background-color: blueviolet;
     color: #fff;
     font-size: 1.6rem;
-    padding: 1rem;
+    font-weight: 700;
+    padding: 1.5rem;
     border: 0;
     border-radius: 0.2rem;
+    width: 90%;
+    margin-inline: auto;
 }
