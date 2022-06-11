@@ -22,25 +22,26 @@ const answers = [
     "Concentre-se e pergunte novamente.",
     "Sinais apontam que sim.",
 ]
+const totalAnswers = answers.length
+const randomNumber = Math.floor(Math.random() * totalAnswers)
 
-button.addEventListener('click', askQuestion)
+button.addEventListener('click', answerTheQuestion)
 
-let onAskQuestion = null
+let askQuestionActivated = null
 
-// clicar em fazer pergunta
-function askQuestion() {
+function answerTheQuestion() {
 
     if(wish.value === "") {
         alert("Digite sua pergunta")
         return
     }
 
-    if(onAskQuestion == true) {
+    if(askQuestionActivated == true) {
         alert("Você só pode perguntar de 1 em 1 vez")
         return
     }
 
-    onAskQuestion = true
+    askQuestionActivated = true
 
     mainAnswer.style.opacity = 1;
 
@@ -49,22 +50,17 @@ function askQuestion() {
     div.textContent = wish.value
     mainAnswer.appendChild(div)
 
-    // gerar número aleátorio
-    const totalAnswers = answers.length
-    const randomNumber = Math.floor(Math.random() * totalAnswers)
-
     const h2 = document.createElement("h2")
     h2.className = "title"
     h2.textContent = answers[randomNumber]
     mainAnswer.appendChild(h2)
 
-    // sumir a resposta depois de 3 segundos
     setTimeout(() => {
         mainAnswer.style.opacity = 0;
         setTimeout(() => {
             mainAnswer.removeChild(div)
             mainAnswer.removeChild(h2)
-            onAskQuestion = false
+            askQuestionActivated = false
         }, 800)
-    }, 3000)
+    }, 3000)  
 }
