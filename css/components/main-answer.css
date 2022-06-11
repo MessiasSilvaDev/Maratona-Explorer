@@ -1,0 +1,17 @@
+.main-answer {
+    margin-top: 3rem;
+    transition: opacity 0.7s;
+}
+
+.main-answer .question {
+    font-size: 1.8rem;
+    font-weight: normal;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.main-answer .title {
+    font-size: 2.2rem;
+    opacity: 1;
+    margin: 0;
+}
