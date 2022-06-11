@@ -27,8 +27,6 @@ const randomNumber = Math.floor(Math.random() * totalAnswers)
 
 button.addEventListener('click', answerTheQuestion)
 
-let askQuestionActivated = null
-
 function answerTheQuestion() {
 
     if(wish.value === "") {
@@ -36,12 +34,7 @@ function answerTheQuestion() {
         return
     }
 
-    if(askQuestionActivated == true) {
-        alert("Você só pode perguntar de 1 em 1 vez")
-        return
-    }
-
-    askQuestionActivated = true
+    button.setAttribute("disabled", true)
 
     mainAnswer.style.opacity = 1;
 
@@ -57,10 +50,10 @@ function answerTheQuestion() {
 
     setTimeout(() => {
         mainAnswer.style.opacity = 0;
+        button.removeAttribute("disabled")
         setTimeout(() => {
             mainAnswer.removeChild(div)
             mainAnswer.removeChild(h2)
-            askQuestionActivated = false
         }, 800)
     }, 3000)  
 }
